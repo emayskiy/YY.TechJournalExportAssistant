@@ -6,7 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Libs\YY.TechJournalExportAssistant\YY.TechJournalExportAssistant.csproj" />
+    <ProjectReference Include="..\..\Libs\YY.TechJournalExportAssistant.ClickHouse\YY.TechJournalExportAssistant.ClickHouse.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
