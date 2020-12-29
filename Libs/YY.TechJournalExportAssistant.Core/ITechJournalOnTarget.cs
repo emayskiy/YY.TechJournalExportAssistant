@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using YY.TechJournalExportAssistant.Core;
 using YY.TechJournalReaderAssistant;
 using YY.TechJournalReaderAssistant.Models;
 
-namespace YY.TechJournalExportAssistant
+namespace YY.TechJournalExportAssistant.Core
 {
     public interface ITechJournalOnTarget
     {

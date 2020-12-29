@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using Microsoft.Extensions.Configuration;
-using YY.TechJournalExportAssistant;
 using YY.TechJournalExportAssistant.ClickHouse;
 using YY.TechJournalExportAssistant.Core;
 using YY.TechJournalReaderAssistant;
@@ -93,43 +92,6 @@ namespace YY.TechJournalExportAssistantConsoleApp
                 {
                     break;
                 }
-            }
-
-            using (TechJournalExportMaster exporter = new TechJournalExportMaster())
-            {
-                exporter.SetTechJournalPath(techJournalPath);
-
-                TechJournalOnClickHouse target = new TechJournalOnClickHouse(connectionString, portion);
-                target.SetInformationSystem(new TechJournalLogBase()
-                {
-                    Name = techJournalName,
-                    Description = techJournalDescription
-                });
-                exporter.SetTarget(target);
-
-                exporter.BeforeExportData += BeforeExportData;
-                exporter.AfterExportData += AfterExportData;
-                exporter.OnErrorExportData += OnErrorExportData;
-
-                _beginPortionExport = DateTime.Now;
-                if (useWatchMode)
-                {
-                    while (true)
-                    {
-                        if (Console.KeyAvailable)
-                            if (Console.ReadKey().KeyChar == 'q')
-                                break;
-
-                        while (exporter.NewDataAvailable())
-                        {
-                            exporter.SendData();
-                            Thread.Sleep(watchPeriodSecondsMs);
-                        }
-                    }
-                }
-                else
-                    while (exporter.NewDataAvailable())
-                        exporter.SendData();
             }
 
             Console.WriteLine();

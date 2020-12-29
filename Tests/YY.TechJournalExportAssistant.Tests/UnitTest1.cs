@@ -1,4 +1,3 @@
-using System;
 using Xunit;
 
 namespace YY.TechJournalExportAssistant.Tests
@@ -8,7 +7,8 @@ namespace YY.TechJournalExportAssistant.Tests
         [Fact]
         public void Test1()
         {
-
+            // TODO: We need more tests :)
+            Assert.True(true);
         }
     }
 }

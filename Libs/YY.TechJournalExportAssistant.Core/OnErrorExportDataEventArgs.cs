@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace YY.TechJournalExportAssistant
+namespace YY.TechJournalExportAssistant.Core
 {
     public class OnErrorExportDataEventArgs
     {

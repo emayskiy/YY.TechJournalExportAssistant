@@ -2,6 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.1</Version>
+    <Authors>Permitin Yuriy</Authors>
+    <Product>Technological journal's export assistant to ClickHouse</Product>
+    <Description>Library for exporting 1C:Enterprise 8.x platform's technological journal files to ClickHouse</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/YPermitin/YY.TechJournalExportAssistant</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>technological, journal, log, 1C, enterprise, ClickHouse</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,6 +38,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Nuget\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

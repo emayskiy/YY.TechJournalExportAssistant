@@ -19,14 +19,10 @@ namespace YY.TechJournalExportAssistant.ClickHouse
     {
         #region Private Static Members
 
-        private static readonly string _emptyGuidAsString = Guid.Empty.ToString();
-        private static readonly DateTime _minDateTime = new DateTime(1970, 1, 1);
-
         #endregion
 
         #region Private Members
 
-        private string _databaseName;
         private ClickHouseConnection _connection;
         private long logFileLastId = -1;
 
@@ -306,7 +302,7 @@ namespace YY.TechJournalExportAssistant.ClickHouse
             {
                 ParameterName = "LastStreamPosition",
                 DbType = DbType.Int64,
-                Value = position?.StreamPosition ?? 0
+                Value = position.StreamPosition ?? 0
             });
 
             commandAddLogInfo.ExecuteNonQuery();
@@ -400,10 +396,6 @@ namespace YY.TechJournalExportAssistant.ClickHouse
 
         private void CheckDatabaseSettings(string connectionSettings)
         {
-            var connectionParams = ClickHouseHelpers.GetConnectionParams(connectionSettings);
-            var databaseParam = connectionParams.FirstOrDefault(e => e.Key.ToUpper() == "DATABASE");
-            _databaseName = databaseParam.Value;
-
             ClickHouseHelpers.CreateDatabaseIfNotExist(connectionSettings);
         }
 

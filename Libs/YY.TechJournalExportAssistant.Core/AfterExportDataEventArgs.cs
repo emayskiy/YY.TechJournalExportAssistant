@@ -1,6 +1,6 @@
 ﻿using YY.TechJournalReaderAssistant;
 
-namespace YY.TechJournalExportAssistant
+namespace YY.TechJournalExportAssistant.Core
 {
     public sealed class AfterExportDataEventArgs
     {

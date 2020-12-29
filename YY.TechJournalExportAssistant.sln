@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30709.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72A12147-1EE9-4331-ACB0-53415C1FACC2}"
-	ProjectSection(SolutionItems) = preProject
-		..\LICENSE = ..\LICENSE
-		..\README.md = ..\README.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{274A8CD4-5F80-4164-B0F6-1F2ACBB8E00B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{81F37230-D7FE-4190-A939-B5AE8A71494B}"
@@ -19,9 +13,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{67285ED0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.TechJournalExportAssistant.Tests", "Tests\YY.TechJournalExportAssistant.Tests\YY.TechJournalExportAssistant.Tests.csproj", "{380AF8FF-4374-4177-914A-20707683FBA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.TechJournalExportAssistant.Core", "Libs\YY.TechJournalExportAssistant.Core\YY.TechJournalExportAssistant.Core.csproj", "{2A6385AB-F109-4D3C-9BDE-E2DC6B518812}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.TechJournalExportAssistant.Core", "Libs\YY.TechJournalExportAssistant.Core\YY.TechJournalExportAssistant.Core.csproj", "{2A6385AB-F109-4D3C-9BDE-E2DC6B518812}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YY.TechJournalExportAssistant.ClickHouse", "Libs\YY.TechJournalExportAssistant.ClickHouse\YY.TechJournalExportAssistant.ClickHouse.csproj", "{62CDAE77-D687-423E-B88C-25967ECC2353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YY.TechJournalExportAssistant.ClickHouse", "Libs\YY.TechJournalExportAssistant.ClickHouse\YY.TechJournalExportAssistant.ClickHouse.csproj", "{62CDAE77-D687-423E-B88C-25967ECC2353}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{300AD5BD-47CB-4AA8-B823-9B061C7654D1}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{56E62BAA-09E0-4119-AA48-0F3B6E80C1F7}"
+	ProjectSection(SolutionItems) = preProject
+		Nuget\icon.png = Nuget\icon.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +59,7 @@ Global
 		{380AF8FF-4374-4177-914A-20707683FBA4} = {67285ED0-345C-4482-98F8-E5305D9C9A0E}
 		{2A6385AB-F109-4D3C-9BDE-E2DC6B518812} = {274A8CD4-5F80-4164-B0F6-1F2ACBB8E00B}
 		{62CDAE77-D687-423E-B88C-25967ECC2353} = {274A8CD4-5F80-4164-B0F6-1F2ACBB8E00B}
+		{56E62BAA-09E0-4119-AA48-0F3B6E80C1F7} = {300AD5BD-47CB-4AA8-B823-9B061C7654D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B3DABD43-6E3B-4871-B426-2C4BDD6018CC}

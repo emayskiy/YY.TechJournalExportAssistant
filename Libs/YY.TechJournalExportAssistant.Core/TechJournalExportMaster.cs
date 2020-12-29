@@ -12,7 +12,6 @@ namespace YY.TechJournalExportAssistant.Core
         #region Private Member Variables
 
         private string _eventLogPath;
-        private string _referenceDataHash;
         private ITechJournalOnTarget _target;
         private TechJournalReader _reader;
         private readonly List<EventData> _dataToSend;
@@ -31,7 +30,6 @@ namespace YY.TechJournalExportAssistant.Core
 
         public TechJournalExportMaster()
         {
-            _referenceDataHash = string.Empty;
             _dataToSend = new List<EventData>();
             _portionSize = 0;
         }

@@ -2,10 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0.1</Version>
+    <Authors>Permitin Yuriy</Authors>
+    <Product>Technological journal's export assistant. Core library</Product>
+    <Description>Core library for exporting 1C:Enterprise 8.x platform's technological journal files to different storage</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/YPermitin/YY.TechJournalExportAssistant</RepositoryUrl>
+    <PackageTags>technological, journal, log, 1C, enterprise, Core</PackageTags>
+    <RepositoryType>GIT</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="YY.TechJournalReaderAssistant" Version="1.0.0.10" />
+    <PackageReference Include="YY.TechJournalReaderAssistant" Version="1.0.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Nuget\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

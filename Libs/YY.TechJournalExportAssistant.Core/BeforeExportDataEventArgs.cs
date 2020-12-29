@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using YY.TechJournalReaderAssistant.Models;
 
-namespace YY.TechJournalExportAssistant
+namespace YY.TechJournalExportAssistant.Core
 {
     public sealed class BeforeExportDataEventArgs
     {
