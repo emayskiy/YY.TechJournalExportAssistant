@@ -2,8 +2,8 @@
 
 | Nuget-пакет | Актуальная версия | Описание |
 | ----------- | ----------------- | -------- |
-| YY.TechJournalExportAssistant.Core | NONE | Базовый пакет |
-| YY.TechJournalExportAssistant.ClickHouse | NONE | Пакет для экспорта в базу ClickHouse |
+| YY.TechJournalExportAssistant.Core | [![NuGet version](https://badge.fury.io/nu/YY.TechJournalExportAssistant.Core.svg)](https://badge.fury.io/nu/YY.TechJournalExportAssistant.Core) | Базовый пакет |
+| YY.TechJournalExportAssistant.ClickHouse | [![NuGet version](https://badge.fury.io/nu/YY.TechJournalExportAssistant.ClickHouse.svg)](https://badge.fury.io/nu/YY.TechJournalExportAssistant.ClickHouse) | Пакет для экспорта в базу ClickHouse |
 
 Решение для экспорта данных технологического журнала платформы 1С:Предприятие 8.x в нестандартные хранилища данных. С помощью библиотеки **[YY.TechJournalReaderAssistant](https://github.com/YPermitin/YY.TechJournalExportAssistant)** реализовано чтение данных из файлов лога технологического журнала (*.log).
 
@@ -12,7 +12,7 @@
 ### Состояние сборки
 | Windows |  Linux |
 |:-------:|:------:|
-| NONE | NONE |
+| NONE | ![.NET](https://github.com/YPermitin/YY.TechJournalExportAssistant/workflows/.NET/badge.svg) |
 
 ### Code Climate
 
