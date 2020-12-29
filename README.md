@@ -12,11 +12,11 @@
 ### Состояние сборки
 | Windows |  Linux |
 |:-------:|:------:|
-| NONE | ![.NET](https://github.com/YPermitin/YY.TechJournalExportAssistant/workflows/.NET/badge.svg) |
+| [![Build status](https://ci.appveyor.com/api/projects/status/vjvb80jf0p5m18vh?svg=true)](https://ci.appveyor.com/project/YPermitin/yy-techjournalexportassistant) | ![.NET](https://github.com/YPermitin/YY.TechJournalExportAssistant/workflows/.NET/badge.svg) |
 
 ### Code Climate
 
-NONE
+[![Maintainability](https://api.codeclimate.com/v1/badges/30500457be8c7e4f1562/maintainability)](https://codeclimate.com/github/YPermitin/YY.TechJournalExportAssistant/maintainability)
 
 ## Благодарности
 
