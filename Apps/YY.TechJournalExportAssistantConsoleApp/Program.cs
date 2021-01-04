@@ -28,16 +28,23 @@ namespace YY.TechJournalExportAssistantConsoleApp
 
             string connectionString = Configuration.GetConnectionString("TechJournalDatabase");
 
-            IConfigurationSection eventLogSection = Configuration.GetSection("TechJournal");
-            string techJournalPath = eventLogSection.GetValue("SourcePath", string.Empty);
-            int watchPeriodSeconds = eventLogSection.GetValue("WatchPeriod", 60);
+            IConfigurationSection techJournalSection = Configuration.GetSection("TechJournal");
+            string techJournalPath = techJournalSection.GetValue("SourcePath", string.Empty);
+            int watchPeriodSeconds = techJournalSection.GetValue("WatchPeriod", 60);
             int watchPeriodSecondsMs = watchPeriodSeconds * 1000;
-            bool useWatchMode = eventLogSection.GetValue("UseWatchMode", false);
-            int portion = eventLogSection.GetValue("Portion", 1000);
+            bool useWatchMode = techJournalSection.GetValue("UseWatchMode", false);
+            int portion = techJournalSection.GetValue("Portion", 1000);
+            string timeZoneName = techJournalSection.GetValue("TimeZone", string.Empty);
 
-            IConfigurationSection techJournalSection = Configuration.GetSection("TechJournalLog");
-            string techJournalName = techJournalSection.GetValue("Name", string.Empty);
-            string techJournalDescription = techJournalSection.GetValue("Description", string.Empty);
+            TimeZoneInfo timeZone;
+            if (string.IsNullOrEmpty(timeZoneName))
+                timeZone = TimeZoneInfo.Local;
+            else
+                timeZone = TimeZoneInfo.FindSystemTimeZoneById(timeZoneName);
+
+            IConfigurationSection techJournalLogSection = Configuration.GetSection("TechJournalLog");
+            string techJournalName = techJournalLogSection.GetValue("Name", string.Empty);
+            string techJournalDescription = techJournalLogSection.GetValue("Description", string.Empty);
 
             if (string.IsNullOrEmpty(techJournalPath))
             {
@@ -60,7 +67,7 @@ namespace YY.TechJournalExportAssistantConsoleApp
 
                     using (TechJournalExportMaster exporter = new TechJournalExportMaster())
                     {
-                        exporter.SetTechJournalPath(tjDirectory.DirectoryData.FullName);
+                        exporter.SetTechJournalPath(tjDirectory.DirectoryData.FullName, timeZone);
 
                         TechJournalOnClickHouse target = new TechJournalOnClickHouse(connectionString, portion);
                         target.SetInformationSystem(new TechJournalLogBase()

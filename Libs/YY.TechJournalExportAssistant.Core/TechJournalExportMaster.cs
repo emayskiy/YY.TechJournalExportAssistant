@@ -16,6 +16,7 @@ namespace YY.TechJournalExportAssistant.Core
         private TechJournalReader _reader;
         private readonly List<EventData> _dataToSend;
         private int _portionSize;
+        private TimeZoneInfo _logTimeZoneInfo;
 
         public delegate void BeforeExportDataHandler(BeforeExportDataEventArgs e);
         public event BeforeExportDataHandler BeforeExportData;
@@ -32,6 +33,7 @@ namespace YY.TechJournalExportAssistant.Core
         {
             _dataToSend = new List<EventData>();
             _portionSize = 0;
+            _logTimeZoneInfo = TimeZoneInfo.Local;
         }
 
         #endregion
@@ -44,11 +46,13 @@ namespace YY.TechJournalExportAssistant.Core
             if (!string.IsNullOrEmpty(_eventLogPath))
             {
                 _reader = TechJournalReader.CreateReader(_eventLogPath);
+                _reader.SetTimeZone(timeZone);
             }
         }
-        public void SetTechJournalPath(string eventLogPath)
+        public void SetTechJournalPath(string eventLogPath, TimeZoneInfo timeZone)
         {
-            SetEventLogPath(eventLogPath, TimeZoneInfo.Local);
+            _logTimeZoneInfo = timeZone;
+            SetEventLogPath(eventLogPath, _logTimeZoneInfo);
         }
         public void SetTarget(ITechJournalOnTarget target)
         {
@@ -114,6 +118,10 @@ namespace YY.TechJournalExportAssistant.Core
             }
             if (_dataToSend.Count > 0)
                 SendDataCurrentPortion(_reader);
+        }
+        public TimeZoneInfo GetTimeZone()
+        {
+            return _logTimeZoneInfo;
         }
         public void Dispose()
         {
